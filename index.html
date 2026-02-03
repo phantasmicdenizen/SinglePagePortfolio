@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Gallery</title>
+
+    <style>
+
+        /*
+        @media all and (min-width: 750px) {
+        .viewport .wide{display:block;}
+        .viewport .narrow{display:none;}
+        }
+
+         @media all and (max-width: 750px) {
+        .viewport .wide{display:none;}
+        .viewport .narrow{display:block;}
+        } 
+        */
+
+        @font-face {
+            font-family: 'Boldstyle';
+            src: url("Assets/OLDSSCH_.TTF");
+        }
+
+        @font-face {
+            font-family: 'Oldstyle';
+            src: url("Assets/OLDSH___.TTF");
+        }
+            
+        body{
+            background-image: url("/Assets/WallpaperTile.png");
+            background-size: 240px;
+            background-repeat: repeat;
+            
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;        
+        }
+
+        h1 { margin:0; padding:0; font-family: 'Boldstyle';}
+        h2 { margin:0; padding:0; font-family: 'Boldstyle';}
+        h3 { margin:0; padding:0; font-family: 'Boldstyle';}
+        p { margin:0; padding:0; font-family: 'Oldstyle';}
+        a { font-family: 'Boldstyle'; font-weight: bold; }
+
+        a:link, a:visited {
+        color: black;
+        text-decoration: none;
+        }
+
+         a:hover, a:active {
+        color: darkolivegreen;
+        text-decoration: none;
+        }
+
+        .wide {
+            width: 60vw;
+            min-width: 480px;
+            font-size: 20px;  
+        }
+
+        /*
+        .narrow {
+            width: 96vw;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        */
+
+
+        /* Header Banner */
+        .home {
+            margin: 60px auto;
+        }
+
+        .title-nav {
+           display: flex;
+           flex-flow: row nowrap;
+           justify-content: center;
+           align-items: end;
+           gap: 2%;
+           margin: 0;
+        }
+
+        .title-nav .title{
+            flex-grow: 4;
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;          
+            text-align: center;
+            border: 60px solid transparent;
+            border-image: url("Assets/Frame-B.png") 33% round;
+            padding: 26px 0px;
+            margin: 0;
+        }
+
+        .title-nav .nav{
+            flex-grow: 1;
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;          
+            text-align: center;
+            border: 20px solid transparent;
+            border-image: url("Assets/Frame-G.png") 33% repeat;
+            padding: 16px 0px;
+        }
+
+        .title-nav hr { 
+            display: block;
+            margin: 5% 25%;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+        .disclaimer{
+            flex-grow: 3;
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;          
+            text-align: center;
+            border: 15px solid transparent;
+            border-image: url("Assets/Frame-E.png") 33% repeat;
+            padding: 15px 0px;
+            margin: 10px auto;
+            width: 50vw;
+            min-width: 420px;
+            font-size: 18px;
+        }
+
+        /* About */
+        .about {
+            margin: 0px auto 60px;
+            width: 55vw;
+            min-width: 420px;
+        }
+
+        .about hr { 
+            display: block;
+            margin: 3%;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+        .about-container {
+           display: flex;
+           flex-flow: row nowrap;
+           justify-content: center;
+           align-items: start;
+           gap: 2%;
+           margin: 0;
+        }
+
+        .about-container .bio {
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: center;
+            overflow-wrap: break-word;
+            border:30px solid transparent;
+            padding: 30px;
+            border-image: url("Assets/Frame-G.png") 33% repeat;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .about-container .namecard {
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: center;
+            overflow-wrap: break-word;
+            border: 16px solid transparent;
+            padding: 10px;
+            border-image: url("Assets/Frame-E.png") 33% repeat;
+            margin: 0;
+        }
+       
+         .about-container img {
+            background-color: white;
+            border: 50px solid transparent;
+            padding: 0;
+            border-image: url("Assets/Frame-A.png") 33% repeat;
+            margin:0;
+            height: 300px;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            margin: 0px auto 60px;
+            /*width: 55vw;
+            min-width: 420px;*/
+        }
+
+        .portfolio .project{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin: 60px 0px;
+        }
+
+        .project .column{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 0;
+            margin: 0px;
+        }
+
+        .portfolio .card{
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: center;
+            border: 20px solid transparent;
+            padding: 20px 30px;
+            border-image: url("Assets/Frame-G.png") 33% repeat;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .portfolio .description{
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: center;
+            overflow-wrap: break-word;
+            border: 20px solid transparent;
+            padding: 30px;
+            border-image: url("Assets/Frame-G.png") 33% repeat;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .portfolio img{
+            background-color: white;
+            border: 30px solid transparent;
+            padding: 0;
+            border-image: url("Assets/Frame-E.png") 33% repeat;
+            margin: auto;
+        }
+
+        .portfolio video{
+            background-color: white;
+            border: 30px solid transparent;
+            padding: 0;
+            border-image: url("Assets/Frame-E.png") 33% repeat;
+            margin: auto;
+        }
+
+        /* Resume */
+        .resume {
+            margin: 60px 0;           
+        }
+
+        .resume .document{
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: left;
+            overflow-wrap: break-word;
+            border: 40px solid transparent;
+            border-image: url("Assets/Frame-A.png") 33% repeat;
+            font-size: 18px;
+            padding: 50px;
+            margin: 3% auto;
+            width: 40vw;
+            min-width: 480px;
+        }
+
+        .resume .contact{
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) inset;
+            text-align: left;
+            overflow-wrap: break-word;
+            border: 20px solid transparent;
+            border-image: url("Assets/Frame-E.png") 33% repeat;
+            font-size: 18px;
+            padding: 50px;
+            margin: auto;
+            width: 45vw;
+            min-width: 480px;
+        }
+
+        /* Pop-up Image */
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+        margin: auto;
+        display: block;
+        height: 80vh;
+        }
+
+        /* The Close Button */
+        .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+        /* Clear Floats */
+        .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+         
+
+    </style>
+</head>
+
+<body>
+    <div class="wide">
+         <!-- Home -->
+        <div class="home" id="home">
+            <div class="title-nav">
+                <div class="title"> 
+                    <h1>Welcome to the Gallery</h1>
+                </div>
+                <div class="nav"> 
+                    <a href="#portfolio"> Portfolio </a>
+                    <hr>
+                    <a href="#resume"> Resume </a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>This website is not yet optimized for mobile views. I apologize for the strange formatting that will occur.</p>
+            </div>
+        </div>
+        <!-- About -->
+        <div class="about">
+            <div class="about-container">
+                    <div class="bio">
+                        <h3> About the Artist </h3>
+                        <hr>
+                        <p> 
+                            &emsp;Damien is a properties artisan with a mixed background in engineering and art. Graduating undergrad with a B.S., 
+                            it wasn't until he decided to return to school that he became involved with theater and entertainment.<br><br>                            
+                            &emsp;During his time at the University of North Carolina School of the Arts he developed an interest in immersive and interactive entertainment. 
+                            Facinated by theme parks, escape rooms, and interactive exhibits, he wishes to pursue a career designing and building these attractions.<br><br>
+                            &emsp;He is always looking to add new skills to his toolbox and frequently picks up new projects. 
+                            Some of his favorite projects to work on include carpentry, electronics, and assemblage pieces.<br>
+                            
+
+                        </p>                                           
+                    </div>
+                    <div>                     
+                        <img src="/Assets/headshotcrop.jpg" alt="A picture of the artist.">
+                        <div class="namecard" style="font-size: 14px; margin: 2% 20% 0 0;">
+                            <h2> Damien Pascarelli </h2>
+                            <hr>
+                            <h3> He / Him </h3>
+                        </div> 
+                    </div>
+                </div>
+        </div>
+        <!-- Portfolio -->
+        <div class="portfolio" id="portfolio">
+
+            <div class="title-nav" style="margin-bottom: 80px;">
+                <div class="title"> 
+                    <h1>Portfolio</h1>
+                </div>
+                <div class="nav"> 
+                    <a href="#home"> About </a>
+                    <hr>
+                    <a href="#resume"> Resume </a>
+                </div>
+            </div>
+
+            <!-- -->
+            <div class="project">                
+                <div class="column" style="margin-right: 2%;">                  
+                    <div class="card" style="margin-right: 0px;">
+                        <h3>Entertainment Console</h3>                        
+                    </div>
+                    <img src="/Portfolio/console-03.jpg" alt="Furniture" width="500px" style="margin:3% 0;">
+                    <div class="description" style="width: 400px; margin-right:0;">
+                        <p> Designed to fit on a single sheet of plywood. 
+                            The console was assembled with dowel joints and raw edges were veneered to finish the look. <br>
+                            A small shelf hides on the back of the unit to hold a power strip. 
+                            Each small shelf has a slot wide enough to allow cords to pass through. 
+                        </p>
+                    </div>                                       
+                </div>
+                <div class="column">
+                    <img src="/Portfolio/console-01.jpg" alt="Furniture" width="400px">
+                    <img src="/Portfolio/console-04.jpg" alt="Furniture" width="300px" style="margin: 3% 0 0 0;"> 
+                </div>                
+            </div>
+            <!-- -->
+            <div class="project">
+                 <div class="column">
+                    <img src="/Portfolio/legs-01.jpg" alt="Legs" width="400px">
+                </div>
+                <div class="column" style="margin-left: 2%;">
+                    <div class="card" style="margin-left: 0;">
+                        <h3>Brazier Legs</h3>                        
+                    </div>
+                    <div class="description" style="width:400px; margin: 3% 0 0 0;">
+                        <p>
+                            Idomeneo - 2026
+                            <hr>
+                            The legs were formed by steaming 1/4" plywood and laminating the strips. <br>
+                            These were clamped into a curved form to shape them as they dried.
+                        </p>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- -->
+            <div class="project">                
+                <div class="column" style="margin: 0 2%;">
+                    <img src="/Portfolio/gator-01.jpg" alt="Alligator" width="350px">
+                    <img src="/Portfolio/gator-02.jpg" alt="Alligator" width="350px" style="margin:3% 0;">
+                    <div class="card">                        
+                        <h3>Alligator Toy</h3>                        
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="/Portfolio/lightsaber-01.jpg" alt="Lightsaber" width="350px">
+                    <img src="/Portfolio/lightsaber-02.jpg" alt="Lightsaber" width="350px" style="margin:3% 0;">
+                    <div class="card">                        
+                        <h3>Turned Lightsaber</h3>                        
+                    </div>
+                    <img src="/Portfolio/bowl-01.jpg" alt="Bowl" width="350px" style="margin:3% 0;">
+                    <div class="card">                        
+                        <h3>Turned Bowl</h3>                        
+                    </div>
+                </div>              
+            </div>
+            <!-- -->
+            <div class="project">
+                <div class="column" style="margin-right: 2%;">
+                    <img src="/Portfolio/taser-01.png" alt="Taser" width="350px" style="margin-bottom: 3%;">
+                    <img src="/Portfolio/taser-03.jpg" alt="Taser" width="350px">                    
+                </div>                
+                <div class="column">
+                    <video width="350px" autoplay muted loop>
+                            <source src="/Portfolio/taserlight-02.mp4" type="video/mp4">
+                            Unsupported
+                    </video>
+                    <img src="/Portfolio/taser-02.jpg" alt="Taser" width="350px" style="margin-top: 3%;">
+                </div>
+                <div class="column" style="margin-left: 2%;">
+                    <div class="card" style="margin-left: 0; margin-bottom: 4%;">
+                        <h3>Flashing Taser</h3>                        
+                    </div>
+                    <div class="description" style="width:150px;">
+                        <p>Barbaque - 2024
+                            <hr>
+                            This prop was 3D modeled using Solid Edge.
+                            <br>
+                            A simple program flashes the filament LED on button press.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+            <div class="project"> 
+                <div class="column">
+                    <div class="card" style="margin-right:0;">
+                        <h3>Breakaway Frames</h3>                        
+                    </div>                    
+                    <video width="400px" autoplay muted loop style="margin: 3% 0;">
+                        <source src="/Portfolio/breakaways-01.mp4" type="video/mp4">
+                        Unsupported
+                    </video>
+                    <div class="description" style="width: 300px; margin-right: 0;">
+                        <p>Fairview - 2024
+                            <hr>
+                            Picture frames that were made to fall on cue.
+                            <br>
+                            Each frame was wired to a car door actuator and all triggered on a button press.
+                            Reset was simply re-hanging them on the actuator pin.
+                        </p>
+                    </div>
+                </div>               
+                <div class="column" style="margin: 0 2%;">                    
+                    <video width="300px" autoplay muted loop>
+                            <source src="/Portfolio/breakaways-02.mp4" type="video/mp4">
+                            Unsupported
+                    </video>                                                             
+                </div>
+                <div class="column">                  
+                    <img src="/Portfolio/breakawaywiring-01.jpg" alt="Wiring" width="250px" style="margin-left: 0;">
+                    <img src="/Portfolio/breakawaywiring-03.jpg" alt="Wiring" width="300px" style="margin-top:3%;">
+                </div>
+                
+            </div>
+            <!-- -->
+            <div class="project">
+                <div class="column">
+                    <img src="/Portfolio/lamp-01.jpg" alt="Legs" width="280px">
+                    <div class="card" style="margin: 3% 0;">
+                        <h3>Lamp Assemblage</h3>                        
+                    </div>
+                    <img src="/Portfolio/lamp-02.jpg" alt="Legs" width="280px">                        
+                </div>
+                <div class="column" style="margin: 0 2%;">
+                    <img src="/Portfolio/knight-01.jpg" alt="Knight" width="280px"> 
+                    <div class="card" style="margin: 3% 0;">
+                        <h3>The Knight</h3>                        
+                    </div>
+                    <img src="/Portfolio/brickwall-01.jpg" alt="Brick" width="280px"> 
+                    <div class="card" style="margin: 3% 0;">
+                        <h3>Rust and Brick</h3>                        
+                    </div> 
+                </div>
+                <div class="column">
+                    <img src="/Portfolio/gardenstake-01.jpg" alt="Garden Stake" width="280px">
+                     <div class="card" style="margin: 3% 0;">
+                        <h3>Garden Stake</h3>                        
+                    </div>
+                    <img src="/Portfolio/signhanger-01.jpg" alt="Sign Hanger" width="280px">
+                    <div class="card" style="margin: 3% 0;">
+                        <h3>Decorative Sign Hanger</h3>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pop-up Images -->
+         <div class="clearfix"></div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+        modal.style.display = "none";
+        }
+
+        // Get all images and insert the clicked image inside the modal
+        // Get the content of the image description and insert it inside the modal image caption
+        var images = document.getElementsByTagName('img');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var i;
+        for (i = 0; i < images.length; i++) {
+        images[i].onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;            
+        }
+        }
+        </script>
+
+        <!-- Resume -->
+        <div class="resume" id="resume">
+
+            <div class="title-nav" style="margin-bottom: 40px;">
+                <div class="title"> 
+                    <h1>Resume</h1>
+                </div>
+                <div class="nav"> 
+                    <a href="#home"> About </a>
+                    <hr>
+                    <a href="#portfolio"> Portfolio </a>
+                </div>
+            </div>
+            
+            <div class="document">
+                <h1>Damien Pascarelli</h1>
+                <h2>Properties Artisan</h2>
+                <br><hr><br>
+                <h3>Education Experience</h3>
+                <hr>
+                <p>
+                    <b>Elliot, A Soldier's Fugue</b> <br>
+                    Properties Director - Fall 2025 <br>
+                    &emsp;- Coordination between departments to build and move scenic elements through three shops. <br>
+                    &emsp;- Maintained a working props list and budget for accurate recordkeeping.<br>
+                    &emsp;- Planned and ran carpentry shop training for new artisans.<br><br>                 
+                </p>
+                <hr>
+                <p>
+                    
+                    <b>Les Belles Soeurs</b><br>
+                    Assistant Properties Director - Spring 2025 <br>
+                    <b>Fairview</b><br>
+                    Assistant Properties Director - Fall 2025<br><br>                   
+                </p>
+                <hr>
+                <p>
+                    <b>Shop Staff Management Position</b><br>
+                    Shop Foreperson <br>
+                    &emsp;- Promote safe shop practive and use of PPE.<br>
+                    &emsp;- Maintain and repair various shop tools and equiptment.<br>
+                    &emsp;- Restock and organize frequently used shop materials.<br>
+                    &emsp;- Answer questions and education students on carpentry practices and proper equipement use.<br><br>
+                </p>
+                <br>
+                <h3>Work Experience</h3>
+                <hr>
+                <p>
+                    <b>Majestic Scenic LLC</b><br>
+                    Overhire<br>
+                    &emsp;- Assisted and moving and packing scenic elements for safe travel.<br>
+                    &emsp;- Prepped, cleaned, and painted parts to ready them for integration.<br><br>
+                </p>
+                <hr>
+                <p>
+                    <b>Dreamville 2025</b><br>
+                    Artist Transportation - Golf Cart<br>
+                    &emsp;- Learned venue map and locations to aid artists in travel.<br>
+                    &emsp;- Coordinated with transport team to ensure artists were at the correct stage on schedule.<br><br>
+                </p>                
+                <h3>Skills</h3>
+                <hr>
+                <p>
+                    &emsp;- Carpentry<br>
+                    &emsp;- Wood Turning<br>
+                    &emsp;- Electronics & Programming<br>
+                    &emsp;- CAD Softwares<br>
+                    <br>
+                    &emsp;- Self-Directed Learning<br>
+                    &emsp;- Troublshooting<br>
+                    &emsp;- Critial Thinking<br>
+                    &emsp;- Communication<br><br>
+                </p>
+                <hr><br>
+                <p style="text-align: center;"> Full resume is available upon request, please see contact information below.</p>
+                
+            </div>
+             <div class="contact">
+                <h3> Contact Information: </h3>
+                <hr>
+                <p>&ensp; Primary email: pascarelliprops@proton.me </p>
+                <p>&emsp; Secondary email: pascarellid5@gmail.com</p>
+                <br>
+                <p>&ensp; UNCSA in-network email: pascarelli.d@artist.uncsa.edu</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
